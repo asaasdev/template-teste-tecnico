@@ -24,10 +24,8 @@ Neste projeto, já há um cadastro funcional de clientes e cobranças, além de 
 
 ## Rodando o projeto
 
-São necessárias 3 coisas para que este projeto rode: MySQL, JDK 8 (ou superior) e Grails 4.0.5.
+São necessárias apenas 2 coisas para que este projeto rode: JDK 8 e Grails 4.0.5. Para instalar o Java e o Grails siga as [instruções contidas aqui](https://docs.grails.org/4.0.5/guide/single.html#requirements).
 
-Para instalar o Java e o Grails siga as [instruções contidas aqui](https://docs.grails.org/4.0.5/guide/single.html#requirements). Já para o MySQL, basta baixar a última versão [aqui](https://dev.mysql.com/downloads/mysql/).
-
-**Importante**: atenção ao username e password do MySQL, caso contrário a aplicação não conseguirá conectar no banco. O username e password já configurados neste projeto são, respectivamente, `root` e `asaas`. Caso seja necessário utilizar username ou password diferentes, basta alterar os valores no arquivo `Datasource.groovy`.
+Esta aplicação vem pré-configurada para rodar utilizando banco em memória. Caso queria utilizar o MySQL, basta baixar a última versão [aqui](https://dev.mysql.com/downloads/mysql/), e configurar o `username` e `password` corretos no arquivo `application.yml`.
 
 Seguidas estas instruções, você já deve conseguir subir a aplicação acessando a pasta do projeto e executando o comando `grails run-app`, e acessar a interface através de `http://localhost:8080`
