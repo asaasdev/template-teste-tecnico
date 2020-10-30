@@ -7,7 +7,7 @@ class BillRepository {
 
     public static DetachedCriteria<Bill> query(Map search) {
         DetachedCriteria<Bill> query = Bill.where {
-            println search
+
             if (search.containsKey("customer")) {
                 eq("customer", search.customer)
             }
