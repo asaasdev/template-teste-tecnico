@@ -25,6 +25,10 @@ Esta aplicação vem pré-configurada para rodar utilizando banco em memória. C
 
 Seguidas estas instruções, você já deve conseguir subir a aplicação acessando a pasta do projeto e executando o comando `grails run-app`, e acessar a interface através de `http://localhost:8080`
 
-## O que já está pronto
+## O que precisa ser implementado
 
-Neste projeto, já há um cadastro funcional de clientes e cobranças, além de algumas regras de negócio implementadas. A partir do que já existe, você deve modificar ou adicionar funcionalidades conforme o solicitado.
+Neste projeto, já há um cadastro funcional de clientes (`Customer.groovy`) e cobranças (`Bill.groovy`), além de algumas regras de negócio implementadas. A partir do que já existe, você deve modificar ou adicionar funcionalidades conforme descrito a seguir.
+
+#### Mudanças a serem implementadas
+1. Incluir CPF/CNPJ no cadastro do cliente e tornar obrigatório. Validar a sintaxe para que não seja inserido clientes com CPF/CNPJ inválido.
+2. Incluir forma de pagamento no cadastro da cobrança e tornar obrigatório. As formas de pagamentos são: Boleto Bancário, Cartão de Crédito ou Transferência Bancária.
