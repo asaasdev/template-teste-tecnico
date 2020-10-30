@@ -7,16 +7,7 @@ class BillRepository {
 
     public static DetachedCriteria<Bill> query(Map search) {
         DetachedCriteria<Bill> query = Bill.where {
-            if (BillRepository.joinWithCustomer(search)) {
-                createAlias("customer", "customer")
-            }
-
-            if (search.containsKey("column")) {
-                projections {
-                    property("${search.column}")
-                }
-            }
-
+            println search
             if (search.containsKey("customer")) {
                 eq("customer", search.customer)
             }
@@ -33,20 +24,17 @@ class BillRepository {
                 eq("dueDate", search.dueDate)
             }
 
-            if (search.containsKey("exists")) {
-                projections {
-                    property("id")
-                }
-            } else {
-                order(search.sort ?: "id", search.order ?: "desc")
+            if (search.containsKey("dueDate")) {
+                eq("dueDate", search.dueDate)
             }
+
+            if (search.containsKey("status")) {
+                eq("status", search.status)
+            }
+
+            order(search.sort ?: "id", search.order ?: "desc")
         }
 
         return query
     }
-
-    private static Boolean joinWithCustomer(Map search) {
-        return (search.containsKey("customerName[like]"))
-    }
-
 }

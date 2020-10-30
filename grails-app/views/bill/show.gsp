@@ -46,6 +46,14 @@
                     </li>
                     <li class="fieldcontain">
                         <span class="property-label">
+                            Situação:
+                        </span>
+                        <div class="property-value">
+                            <g:message code="BillStatus.${bill.status}"/>
+                        </div>
+                    </li>
+                    <li class="fieldcontain">
+                        <span class="property-label">
                             Vencimento:
                         </span>
                         <div class="property-value">

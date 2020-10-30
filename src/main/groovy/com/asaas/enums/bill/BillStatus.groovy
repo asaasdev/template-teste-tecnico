@@ -6,9 +6,9 @@ import grails.compiler.GrailsCompileStatic
 enum BillStatus {
     PENDING,
     OVERDUE,
-    RECEIVED
+    PAID
 
-    public Boolean isReceived() {
-        return [BillStatus.RECEIVED].contains(this)
+    public Boolean isPaid() {
+        return [BillStatus.PAID].contains(this)
     }
 }

@@ -12,11 +12,12 @@ class BillService {
 
     public Bill save(Long customerId, BigDecimal value, Date dueDate) {
         Bill bill = new Bill()
+
         bill.customer = Customer.get(customerId)
         bill.value = value
         bill.dueDate = dueDate
-        bill.status = BillStatus.PENDING
         bill.save()
+
         return bill
     }
 
@@ -24,11 +25,13 @@ class BillService {
         bill.value = value
         bill.dueDate = dueDate
         bill.save()
+
         return bill
     }
 
     public Bill delete(Bill bill) {
         bill.delete()
+
         return bill
     }
 }

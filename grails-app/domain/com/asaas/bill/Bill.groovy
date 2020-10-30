@@ -12,7 +12,7 @@ class Bill extends BaseEntity {
 
     Date dueDate
 
-    BillStatus status
+    BillStatus status = BillStatus.PENDING
 
     static constraints = {
         value validator: { value, obj, errors ->

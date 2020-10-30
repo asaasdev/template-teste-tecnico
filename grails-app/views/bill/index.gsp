@@ -25,6 +25,7 @@
                 <th>Cliente</th>
                 <th>Valor</th>
                 <th>Vencimento</th>
+                <th>Situação</th>
             </tr>
             </thead>
             <tbody>
@@ -33,6 +34,7 @@
                     <td><a href="<g:createLink controller='bill' action='show' id='${bill.id}'/>">${bill.customer.name}</a></td>
                     <td>R$ <g:formatNumber number="${bill.value}" type="number" maxFractionDigits="2" minFractionDigits="2"/></td>
                     <td><g:formatDate date="${bill.dueDate}" format="dd/MM/yyyy" /></td>
+                    <td><g:message code="BillStatus.${bill.status}"/></td>
                 </tr>
             </g:each>
             </tbody>
