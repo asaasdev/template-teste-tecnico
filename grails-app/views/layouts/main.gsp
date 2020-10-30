@@ -19,11 +19,22 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark navbar-static-top" role="navigation">
     <span>
-        ASAAS
+        <a href="${g.createLink(uri:'/')}">
+            Home
+        </a>
     </span>
     <div class="collapse navbar-collapse" aria-expanded="false" style="height: 0.8px;" id="navbarContent">
         <ul class="nav navbar-nav ml-auto">
-            <g:pageProperty name="page.nav"/>
+            <li>
+                <a href="${g.createLink(controller: 'customer', action: 'index')}">
+                    Clientes
+                </a>
+            </li>
+            <li>
+                <a href="${g.createLink(controller: 'bill', action: 'index')}">
+                    Cobranças
+                </a>
+            </li>
         </ul>
     </div>
 </nav>

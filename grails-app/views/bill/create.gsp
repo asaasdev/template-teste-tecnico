@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-group">
                     <label for="value">Valor</label>
-                    <input type="text" value="${params.value}" data-input-type="text" name="value" value="0.00" class="form-control" id="value" maxlength="10" data-constraint="money" style="text-align: right;">
+                    <input required="required" step=".01" type="number" value="${params.value}" data-input-type="text" name="value" value="0.00" class="form-control" id="value" maxlength="10" data-constraint="money" style="text-align: right;">
                 </div>
                 <div class="form-group">
                     <label for="dueDate">Vencimento em</label><br>

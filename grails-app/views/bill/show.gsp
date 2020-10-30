@@ -41,7 +41,7 @@
                             Valor
                         </span>
                         <div class="property-value">
-                            R$ <g:formatNumber number="${bill.value}"/>
+                            R$ <g:formatNumber number="${bill.value}" type="number" maxFractionDigits="2" minFractionDigits="2"/>
                         </div>
                     </li>
                     <li class="fieldcontain">
