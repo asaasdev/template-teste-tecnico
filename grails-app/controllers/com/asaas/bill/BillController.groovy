@@ -13,13 +13,16 @@ class BillController extends BaseController {
 
     def index() {
         List<Bill> billList = BillRepository.query(params).list()
-        List<Customer> availableCustomerList = CustomerRepository.query(params).list()
-
-        return [billList: billList, availableCustomerList: availableCustomerList]
+        return [billList: billList]
     }
 
     def show() {
-        return [bill: Bill.get(params.id)]
+        respond Bill.get(params.id)
+    }
+
+    def create() {
+        List<Customer> availableCustomerList = CustomerRepository.query(params).list()
+        return [availableCustomerList: availableCustomerList]
     }
 
     def save() {
@@ -37,24 +40,11 @@ class BillController extends BaseController {
             buildResponse(false, null, null)
         }
 
-        redirect(action: "index")
+        redirect(action: "create", params: params)
     }
 
-    def delete() {
-        try {
-            Bill bill = billService.delete(Bill.get(params.id))
-
-            if (bill.hasErrors()) {
-                buildResponse(false, null, bill)
-            } else {
-                buildResponse(true, "Cobrança removida com sucesso.", bill)
-            }
-        } catch (Exception exception) {
-            Logger.error("CustomerController -> Exception ao remover bill.", exception)
-            buildResponse(false, null, null)
-        }
-
-        redirect(action: "index")
+    def edit() {
+        respond Bill.get(params.id)
     }
 
     def update() {
@@ -72,7 +62,23 @@ class BillController extends BaseController {
             buildResponse(false, null, null)
         }
 
-        redirect(action: "index")
+        redirect(action: "edit", id: params.id)
     }
 
+    def delete() {
+        try {
+            Bill bill = billService.delete(Bill.get(params.id))
+            if (!bill.hasErrors()) {
+                buildResponse(true, "Cobrança removida com sucesso.", bill)
+                redirect(action: "index")
+                return
+            }
+            buildResponse(false, null, bill)
+        } catch (Exception exception) {
+            Logger.error("CustomerController -> Exception ao remover bill.", exception)
+            buildResponse(false, null, null)
+        }
+
+        redirect(action: "show", id: params.id)
+    }
 }

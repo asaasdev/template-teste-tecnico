@@ -9,8 +9,6 @@ abstract class BaseEntity {
 
     Date dateCreated
 
-    Boolean deleted = false
-
     static mapping = {
         tablePerHierarchy false
     }
@@ -18,6 +16,5 @@ abstract class BaseEntity {
     static constraints = {
         lastUpdated nullable: true
         dateCreated    nullable: true
-        deleted nullable: true
     }
 }

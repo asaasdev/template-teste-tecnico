@@ -9,10 +9,6 @@ class CustomerRepository {
     public static DetachedCriteria<Customer> query(Map search) {
         DetachedCriteria<Customer> query = Customer.where {
 
-            if (!Boolean.valueOf(search.includeDeleted?.asBoolean())) {
-                eq("deleted", false)
-            }
-
             if (search.containsKey("column")) {
                 projections {
                     property("${search.column}")

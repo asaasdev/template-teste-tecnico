@@ -11,10 +11,6 @@ class BillRepository {
                 createAlias("customer", "customer")
             }
 
-            if (!Boolean.valueOf(search.includeDeleted?.asBoolean())) {
-                eq("deleted", false)
-            }
-
             if (search.containsKey("column")) {
                 projections {
                     property("${search.column}")

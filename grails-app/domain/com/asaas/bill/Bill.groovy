@@ -18,5 +18,9 @@ class Bill extends BaseEntity {
         value validator: { value, obj, errors ->
             if (value <= 0) errors.rejectValue("value", "min.exceeded")
         }
+
+        dueDate validator: { dueDate, obj, errors ->
+            if (!obj.id && dueDate.clone().clearTime() < new Date().clearTime()) errors.rejectValue("dueDate", "invalid")
+        }
     }
 }

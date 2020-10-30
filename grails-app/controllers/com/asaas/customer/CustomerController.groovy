@@ -14,7 +14,11 @@ class CustomerController extends BaseController {
     }
 
     def show() {
-        return [customer: Customer.get(params.id)]
+        respond Customer.get(params.id)
+    }
+
+    def create() {
+        return [:]
     }
 
     def save() {
@@ -25,14 +29,17 @@ class CustomerController extends BaseController {
                 redirect(action: "show", id: customer.id)
                 return
             }
-
             buildResponse(false, null, customer)
         } catch (Exception exception) {
             Logger.error("CustomerController -> Exception ao salvar customer.", exception)
             buildResponse(false, null, null)
         }
 
-        redirect(action: "index")
+        redirect(action: "create", params: params)
+    }
+
+    def edit() {
+        respond Customer.get(params.id)
     }
 
     def update() {
@@ -43,30 +50,30 @@ class CustomerController extends BaseController {
                 redirect(action: "show", id: customer.id)
                 return
             }
-
             buildResponse(false, null, customer)
         } catch (Exception exception) {
             Logger.error("CustomerController -> Exception ao atualizar dados do customer.", exception)
             buildResponse(false, null, null)
         }
 
-        redirect(action: "index")
+        redirect(action: "edit", id: params.id)
     }
 
     def delete() {
         try {
-             Customer customer = customerService.delete(Customer.get(params.id))
-
-            if (customer.hasErrors()) {
-                buildResponse(false, null, customer)
-            } else {
-                buildResponse(true, "Cliente removido com sucesso.", customer)
+            Customer customer = customerService.delete(Customer.get(params.id))
+            if (!customer.hasErrors()) {
+                buildResponse(true, "Os dados de seu cliente foram atualizados com sucesso!", customer)
+                redirect(action: "index")
+                return
             }
+
+            buildResponse(false, null, customer)
         } catch (Exception exception) {
             Logger.error("CustomerController -> Exception ao remover customer.", exception)
             buildResponse(false, null, null)
         }
 
-        redirect(action: "index")
+        redirect(action: "show", id: params.id)
     }
 }

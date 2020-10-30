@@ -11,34 +11,24 @@ import grails.gorm.transactions.Transactional
 class CustomerService {
 
     public Customer save(String name, String email, String mobilePhone) {
-        Customer validatedCustomer = validateSave(name, email)
+        Customer validatedCustomer = validateEmail(email)
         if (validatedCustomer.hasErrors()) return validatedCustomer
 
         Customer customer = new Customer()
         customer.name = name
         customer.email = email
         customer.mobilePhone = mobilePhone
-        customer.save(failOnError: true)
+        customer.save()
 
         return customer
     }
 
-    private Customer validateSave(String name, String email) {
+    private Customer validateEmail(String email) {
         Customer validateCustomer = new Customer()
 
-        Boolean hasAnotherCustomerWithSameEmail = CustomerRepository.query([exists: true, email: email]).get()
-        if (hasAnotherCustomerWithSameEmail) {
+        Boolean existsAnotherCustomerWithSameEmail = CustomerRepository.query([exists: true, email: email]).get()
+        if (existsAnotherCustomerWithSameEmail) {
             Utils.addError(validateCustomer, "customer.error.emailInUse")
-            return validateCustomer
-        }
-
-        if (!Utils.isValidEmail(email)) {
-            Utils.addError(validateCustomer, "customer.error.invalidEmail")
-            return validateCustomer
-        }
-
-        if (!name) {
-            Utils.addError(validateCustomer, "customer.error.invalidName")
             return validateCustomer
         }
 
@@ -49,12 +39,12 @@ class CustomerService {
         customer.name = name
         customer.email = email
         customer.mobilePhone = mobilePhone
-        customer.save(failOnError: true)
+        customer.save()
         return customer
     }
 
     public Customer delete(Customer customer) {
-        customer.delete(failOnError: true)
+        customer.delete()
         return customer
     }
 }
