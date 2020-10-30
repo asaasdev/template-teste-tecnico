@@ -106,6 +106,13 @@ dataSource:
 
 environments:
     development:
+        pagination:
+            limit:
+                default: 10
+                max: 100
+            offset:
+                default: 0
+
         dataSources:
             dataSource:
                 dbCreate: "update"
