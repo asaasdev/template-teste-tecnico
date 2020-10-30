@@ -17,11 +17,6 @@ Ao revisar seu código vamos avaliar os seguintes pontos:
 * Código bem escrito, limpo e coeso.
 * Uso correto do versionamento do git.
 
-## O que já está pronto
-
-Neste projeto, já há um cadastro funcional de clientes e cobranças, além de algumas regras de negócio implementadas. A partir do que já existe, você deve modificar ou adicionar funcionalidades conforme o solicitado.
-
-
 ## Rodando o projeto
 
 São necessárias apenas 2 coisas para que este projeto rode: JDK 8 e Grails 4.0.5. Para instalar o Java e o Grails siga as [instruções contidas aqui](https://docs.grails.org/4.0.5/guide/single.html#requirements).
@@ -29,3 +24,7 @@ São necessárias apenas 2 coisas para que este projeto rode: JDK 8 e Grails 4.0
 Esta aplicação vem pré-configurada para rodar utilizando banco em memória. Caso queria utilizar o MySQL, basta baixar a última versão [aqui](https://dev.mysql.com/downloads/mysql/), e configurar o `username` e `password` corretos no arquivo `application.yml`.
 
 Seguidas estas instruções, você já deve conseguir subir a aplicação acessando a pasta do projeto e executando o comando `grails run-app`, e acessar a interface através de `http://localhost:8080`
+
+## O que já está pronto
+
+Neste projeto, já há um cadastro funcional de clientes e cobranças, além de algumas regras de negócio implementadas. A partir do que já existe, você deve modificar ou adicionar funcionalidades conforme o solicitado.
