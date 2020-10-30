@@ -22,7 +22,7 @@ Ao revisar seu código vamos avaliar os seguintes pontos:
 Neste projeto, já há um cadastro funcional de clientes e cobranças, além de algumas regras de negócio implementadas. A partir do que já existe, você deve modificar ou adicionar funcionalidades conforme o solicitado.
 
 
-## Botando para rodar
+## Rodando o projeto
 
 São necessárias 3 coisas para que este projeto rode: MySQL, JDK 8 (ou superior) e Grails 4.0.5.
 
