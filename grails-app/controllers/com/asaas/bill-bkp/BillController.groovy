@@ -24,7 +24,7 @@ class BillController extends BaseController {
 
     def save() {
         try {
-            Bill bill = billService.save(Customer.get(params.customerId), Utils.toBigDecimal(params.value), Utils.toDate(params.dueDate))
+            Bill bill = billService.save(params.customerId.toLong(), Utils.toBigDecimal(params.value), Utils.toDate(params.dueDate))
             if (!bill.hasErrors()) {
                 buildResponse(true, "Cobrança criada com sucesso!", bill)
                 redirect(action: "show", id: bill.id)
@@ -74,4 +74,5 @@ class BillController extends BaseController {
 
         redirect(action: "index")
     }
+
 }
