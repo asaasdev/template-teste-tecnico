@@ -17,7 +17,7 @@ class Utils {
 
     @GrailsCompileStatic(TypeCheckingMode.SKIP)
     public static Object addError(Object entity, String message) {
-        entity.errors.reject("", null, message)
+        entity.errors.reject(message, null, message)
         return entity
     }
 
@@ -58,8 +58,13 @@ class Utils {
     }
 
     public static Date toDate(Object fromDate, String pattern) {
-        LocalDate localDate = LocalDate.parse(fromDate.toString(), DateTimeFormatter.ofPattern(pattern))
-        return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant())
+        try {
+            LocalDate localDate = LocalDate.parse(fromDate.toString(), DateTimeFormatter.ofPattern(pattern))
+            return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant())
+        } catch (Exception e) {
+            e.printStackTrace()
+            return null
+        }
     }
 
     public static String fromDate(Date date) {

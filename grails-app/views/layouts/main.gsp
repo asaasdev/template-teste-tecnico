@@ -20,7 +20,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark navbar-static-top" role="navigation">
     <span>
         <a href="${g.createLink(uri:'/')}">
-            Home
+            Início
         </a>
     </span>
     <div class="collapse navbar-collapse" aria-expanded="false" style="height: 0.8px;" id="navbarContent">

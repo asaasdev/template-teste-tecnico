@@ -29,7 +29,6 @@ class CustomerService {
         Boolean existsAnotherCustomerWithSameEmail = CustomerRepository.query([exists: true, email: email]).get()
         if (existsAnotherCustomerWithSameEmail) {
             Utils.addError(validateCustomer, "customer.error.emailInUse")
-            return validateCustomer
         }
 
         return validateCustomer

@@ -18,11 +18,11 @@
             <form action="<g:createLink controller='customer' action='save'/>" method="POST" style="width: 300px; padding: 30px">
                 <div class="form-group">
                     <label for="name"><strong>Nome</strong></label>
-                    <input type="text" name="name" class="form-control" value="${params.name}" id="name">
+                    <input type="text" name="name" class="form-control" value="${params.name}" id="name" required="required">
                 </div>
                 <div class="form-group">
                     <label for="email"><strong>E-mail</strong></label>
-                    <input type="text" name="email" class="form-control" value="${params.email}" id="email">
+                    <input type="text" name="email" class="form-control" value="${params.email}" id="email" required="required">
                 </div>
                 <div class="form-group">
                     <label for="mobilePhone"><strong>Celular</strong></label>

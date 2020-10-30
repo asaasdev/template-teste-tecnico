@@ -43,14 +43,8 @@
                         </div>
                     </li>
                     <li class="fieldcontain">
-                        <form action="<g:createLink controller='customer' action='delete'/>" method="POST">
-                            <input type="hidden" value="${customer.id}" name="id"/>
-                            <button type="submit" class="btn btn-danger">
-                                Remover
-                            </button>
-                        </form>
-                        <br>
-                        <a class="btn btn-dark" href="<g:createLink controller='customer' action='edit' id='${customer.id}'/>">Editar</a>
+                        <a class="btn btn-info" href="<g:createLink controller='customer' action='edit' id='${customer.id}'/>">Editar</a>
+                        <a class="btn btn-danger" href="<g:createLink controller='customer' action='delete' id='${customer.id}'/>">Remover</a>
                     </li>
                 </ol>
             </div>

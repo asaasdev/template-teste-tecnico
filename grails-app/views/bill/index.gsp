@@ -22,25 +22,17 @@
         <table class="table">
             <thead class="thead">
             <tr>
-                <th>Identificador</th>
                 <th>Cliente</th>
                 <th>Valor</th>
                 <th>Vencimento</th>
-                <th></th>
             </tr>
             </thead>
             <tbody>
             <g:each var="bill" in="${billList}">
                 <tr>
-                    <td>${bill.id}</td>
-                    <td>${bill.customer.name}</td>
+                    <td><a href="<g:createLink controller='bill' action='show' id='${bill.id}'/>">${bill.customer.name}</a></td>
                     <td>R$ <g:formatNumber number="${bill.value}" type="number" maxFractionDigits="2" minFractionDigits="2"/></td>
                     <td><g:formatDate date="${bill.dueDate}" format="dd/MM/yyyy" /></td>
-                    <td>
-                        <button type="#" class="btn btn-default">
-                            <a href="<g:createLink controller='bill' action='show' id='${bill.id}'/>">Detalhes</a>
-                        </button>
-                    </td>
                 </tr>
             </g:each>
             </tbody>

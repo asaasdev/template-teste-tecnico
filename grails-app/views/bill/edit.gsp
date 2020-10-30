@@ -22,28 +22,25 @@
 
                 <div class="form-group">
                     <span class="property-label">
-                        Identificador
+                        Identificador: ${bill.id}
                     </span>
-                    <div class="property-value">
-                        ${bill.id}
-                    </div>
                 </div>
                 <div class="form-group">
                     <span class="property-label">
                         Nome:
+                        <g:link controller="customer" action="show" id="${bill.customer.id}">
+                            ${bill.customer.name}
+                        </g:link>
                     </span>
-                    <div class="property-value">
-                        ${bill.customer.name}
-                    </div>
                 </div>
 
                 <div class="form-group">
                     <label for="value">Valor</label>
-                    <input type="text" data-input-type="text" value="${bill.value}" name="value" class="form-control" id="value" maxlength="10" data-constraint="money">
+                    <input type="text" data-input-type="text" value="${bill.value}" name="value" class="form-control" id="value" maxlength="10" data-constraint="money" required="required" style="text-align: right;">
                 </div>
                 <div class="form-group">
                     <label for="value">Vencimento em</label><br>
-                    <input name="dueDate" type="date" value="${Utils.fromDate(bill.dueDate)}">
+                    <input name="dueDate" type="date" value="${Utils.fromDate(bill.dueDate)}" required="required" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-primary">Atualizar</button>
             </form>

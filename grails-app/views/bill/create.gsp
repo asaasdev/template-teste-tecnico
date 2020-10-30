@@ -18,7 +18,7 @@
             <form action="<g:createLink controller='bill' action='save'/>" method="POST" style="width: 300px; padding: 30px">
                 <div class="form-group">
                     <label for="customerId">Cliente</label><br>
-                    <g:select id="customerId" value="${params.customerId}"  name="customerId" class="form-control" noSelection="${[0: 'Selecione um cliente']}" from="${availableCustomerList}" optionKey="id" optionValue="name"/>
+                    <g:select id="customerId" value="${params.customerId}" name="customerId" class="form-control" noSelection="${[0: 'Selecione um cliente']}" from="${availableCustomerList}" optionKey="id" optionValue="name"/>
                 </div>
                 <div class="form-group">
                     <label for="value">Valor</label>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                     <label for="dueDate">Vencimento em</label><br>
-                    <input id="dueDate" value="${params.dueDate}" name="dueDate" type="date">
+                    <input id="dueDate" value="${params.dueDate}" name="dueDate" type="date" required="required" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-primary">Criar cobrança</button>
             </form>

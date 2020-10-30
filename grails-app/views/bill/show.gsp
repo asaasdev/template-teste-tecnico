@@ -20,7 +20,7 @@
                 <ol class="property-list">
                     <li class="fieldcontain">
                         <span class="property-label">
-                            Identificador
+                            Identificador:
                         </span>
                         <div class="property-value">
                             ${bill.id}
@@ -38,7 +38,7 @@
                     </li>
                     <li class="fieldcontain">
                         <span class="property-label">
-                            Valor
+                            Valor:
                         </span>
                         <div class="property-value">
                             R$ <g:formatNumber number="${bill.value}" type="number" maxFractionDigits="2" minFractionDigits="2"/>
@@ -53,15 +53,8 @@
                         </div>
                     </li>
                     <li class="fieldcontain">
-                        <form action="<g:createLink controller='bill' action='delete'/>" method="POST">
-                            <input type="hidden" value="${bill.id}" name="id"/>
-                            <button type="submit" class="btn btn-danger">
-                                Remover
-                            </button>
-                        </form>
-                        <br>
-
-                        <a class="btn btn-dark" href="<g:createLink controller='bill' action='edit' id='${bill.id}'/>">Editar</a>
+                        <a class="btn btn-info" href="<g:createLink controller='bill' action='edit' id='${bill.id}'/>">Editar</a>
+                        <a class="btn btn-danger" href="<g:createLink controller='bill' action='delete' id='${bill.id}'/>">Remover</a>
                     </li>
                 </ol>
             </div>

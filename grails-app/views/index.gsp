@@ -10,12 +10,12 @@
             <div id="controllers" role="navigation">
                 <li class="list-group-item">
                     <a href="${g.createLink(controller: 'customer', action: 'index')}">
-                        Clientes
+                        Cadastro de Clientes
                     </a>
                 </li>
                 <li class="list-group-item">
                     <a href="${g.createLink(controller: 'bill', action: 'index')}">
-                        Cobranças
+                        Cadastro de Cobranças
                     </a>
                 </li>
             </div>
