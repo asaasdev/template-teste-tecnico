@@ -34,7 +34,7 @@
                 <tr>
                     <td>${bill.id}</td>
                     <td>${bill.customer.name}</td>
-                    <td>R$ <g:formatNumber number="${bill.value}"/></td>
+                    <td>R$ <g:formatNumber number="${bill.value}" type="number" maxFractionDigits="2" minFractionDigits="2"/></td>
                     <td><g:formatDate date="${bill.dueDate}" format="dd/MM/yyyy" /></td>
                     <td>
                         <button type="#" class="btn btn-default">
@@ -45,6 +45,12 @@
             </g:each>
             </tbody>
         </table>
+
+        <g:if test="${billList.size() < billList.totalCount}">
+            <div class="pagination">
+                <g:paginate total="${billList.totalCount}" action="index" maxsteps="5" params="${params}" next="Próximo" prev="Anterior"/>
+            </div>
+        </g:if>
     </g:if>
     <g:else>
         <div class="alert alert-dark" role="alert">

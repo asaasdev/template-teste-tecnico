@@ -42,6 +42,12 @@
                 </g:each>
                 </tbody>
             </table>
+
+            <g:if test="${customerList.size() < customerList.totalCount}">
+                <div class="pagination">
+                    <g:paginate total="${customerList.totalCount}" action="index" maxsteps="5" params="${params}" next="Próximo" prev="Anterior"/>
+                </div>
+            </g:if>
         </g:if>
         <g:else>
             <div class="alert alert-dark" role="alert">

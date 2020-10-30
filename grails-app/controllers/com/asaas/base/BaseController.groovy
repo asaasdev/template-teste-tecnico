@@ -16,4 +16,18 @@ class BaseController {
             if (useEntityError) flash.message = message(code: entity.errors.allErrors[0].codes[0] ?: entity.errors.allErrors[0].defaultMessage)
         }
     }
+
+    protected Integer getLimitPerPage() {
+        if (params.max == 'undefined') params.max = null
+
+        Integer max = Math.min(Integer.valueOf(params.max ? params.max : Integer.valueOf(grailsApplication.config.getProperty("pagination.limit.default"))), Integer.valueOf(grailsApplication.config.getProperty("pagination.limit.max")))
+        return max
+    }
+
+    protected Integer getCurrentPage() {
+        if (params.offset == 'undefined') params.offset = null
+
+        Integer offset = Integer.valueOf(params.offset ? params.offset : Integer.valueOf(grailsApplication.config.getProperty("pagination.offset.default")))
+        return offset
+    }
 }
