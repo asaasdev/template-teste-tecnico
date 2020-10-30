@@ -3,13 +3,14 @@ package com.asaas.customer
 import com.asaas.base.BaseController
 import com.asaas.logger.Logger
 import com.asaas.repository.customer.CustomerRepository
+import grails.gorm.PagedResultList
 
 class CustomerController extends BaseController {
 
     CustomerService customerService
 
     def index() {
-        List<Customer> customerList = CustomerRepository.query(params).list()
+        PagedResultList<Customer> customerList = CustomerRepository.query(params).list(max: getLimitPerPage(), offset: getCurrentPage())
         return [customerList: customerList]
     }
 
@@ -26,7 +27,7 @@ class CustomerController extends BaseController {
             Customer customer = customerService.save(params.name, params.email, params.mobilePhone)
             if (!customer.hasErrors()) {
                 buildResponse(true, "Cliente cadastrado com sucesso!", customer)
-                redirect(action: "show", id: customer.id)
+                redirect(action: "index")
                 return
             }
             buildResponse(false, null, customer)
@@ -47,7 +48,7 @@ class CustomerController extends BaseController {
             Customer customer = customerService.update(Customer.get(params.id), params.name, params.email, params.mobilePhone)
             if (!customer.hasErrors()) {
                 buildResponse(true, "Os dados de seu cliente foram atualizados com sucesso!", customer)
-                redirect(action: "show", id: customer.id)
+                redirect(action: "index")
                 return
             }
             buildResponse(false, null, customer)

@@ -6,13 +6,14 @@ import com.asaas.logger.Logger
 import com.asaas.repository.bill.BillRepository
 import com.asaas.repository.customer.CustomerRepository
 import com.asaas.utils.Utils
+import grails.gorm.PagedResultList
 
 class BillController extends BaseController {
 
     BillService billService
 
     def index() {
-        List<Bill> billList = BillRepository.query(params).list()
+        PagedResultList<Bill> billList = BillRepository.query(params).list(max: getLimitPerPage(), offset: getCurrentPage())
         return [billList: billList]
     }
 
@@ -30,7 +31,7 @@ class BillController extends BaseController {
             Bill bill = billService.save(params.customerId.toLong(), Utils.toBigDecimal(params.value), Utils.toDate(params.dueDate))
             if (!bill.hasErrors()) {
                 buildResponse(true, "Cobrança criada com sucesso!", bill)
-                redirect(action: "show", id: bill.id)
+                redirect(action: "index")
                 return
             }
 
@@ -52,7 +53,7 @@ class BillController extends BaseController {
             Bill bill = billService.update(Bill.get(params.id), Utils.toBigDecimal(params.value), Utils.toDate(params.dueDate))
             if (!bill.hasErrors()) {
                 buildResponse(true, "Cobrança atualizada com sucesso!", bill)
-                redirect(action: "show", id: bill.id)
+                redirect(action: "index")
                 return
             }
 
