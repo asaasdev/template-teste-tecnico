@@ -14,7 +14,7 @@
             </div>
         </g:if>
 
-        <form action="<g:createLink controller='customer' action='update'/>" method="POST">
+        <form action="<g:createLink controller='customer' action='update'/>" method="POST" style="width: 300px; padding: 30px">
             <input type="hidden" value="${customer.id}" name="id">
 
             <div class="form-group">

@@ -50,9 +50,7 @@
                             </button>
                         </form>
                         <br>
-                        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#edit-customer-modal">
-                            Editar
-                        </button>
+                        <a class="btn btn-dark" href="<g:createLink controller='customer' action='edit' id='${customer.id}'/>">Editar</a>
                     </li>
                 </ol>
             </div>
