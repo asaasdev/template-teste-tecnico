@@ -35,5 +35,4 @@ Neste projeto, já há um cadastro funcional de clientes (`Customer.groovy`) e c
 3. Soft Delete: atualmente, ao remover um cliente ou cobrança, o registro é fisicamente removido do banco. Este comportamento deve ser mudado para soft-delete afim de ser possível manter histórico dos registros. Criar um atributo `deleted` nos domínios, e defini-lo como `true` ao remover um registro. Uma vez removido, o registro não deve mais ser exibido em nenhum lugar pela aplicação.
 4. Possibilitar definir uma cobrança como paga e armazenar a data de pagamento. Não permitir exclusão de cobranças pagas.
 5. Criar um job que rode de segunda sexta, que defina como Vencida todas as cobranças com data de vencimento anterior a hoje e que estejam com situação Pendente.
-6. Filtros nas listagens: adicione os filtros que achar pertinentes.
 
