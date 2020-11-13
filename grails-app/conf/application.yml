@@ -123,9 +123,9 @@ environments:
             # dataSource:
             #     dbCreate: "update"
             #     url: "jdbc:mysql://localhost/asaastest?useSSL=false&allowPublicKeyRetrieval=true"
-            #     driverClassName: "com.mysql.jdbc.Driver"
-            #     username: "defina_seu_usuario"
-            #     password: "defina_sua_senha"
+            #    driverClassName: "com.mysql.jdbc.Driver"
+            #     username: "asaas"
+            #     password: "asaas"
             #     type: "com.zaxxer.hikari.HikariDataSource"
             #     properties:
             #         connectionTimeout: 30000
