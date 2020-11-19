@@ -24,6 +24,7 @@
                     <th>Nome</th>
                     <th>E-mail</th>
                     <th>Celular</th>
+                    <th>CPF/CNPJ</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -32,6 +33,7 @@
                         <td><a href="<g:createLink controller='customer' action='show' id='${customer.id}'/>">${customer.name}</a></td>
                         <td>${customer.email}</td>
                         <td>${customer.mobilePhone}</td>
+                        <td>${customer.cpfCnpj}</td>
                     </tr>
                 </g:each>
                 </tbody>

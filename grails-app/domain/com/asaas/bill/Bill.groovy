@@ -14,13 +14,27 @@ class Bill extends BaseEntity {
 
     BillStatus status = BillStatus.PENDING
 
-    static constraints = {
+    String formOfPayment
+    
+    Date paymentDate 
+
+    static constraints = {       
+
+        paymentDate nullable: true, blank: false
+
         value validator: { value, obj, errors ->
             if (value <= 0) errors.rejectValue("value", "min.exceeded")
-        }
+        }       
 
         dueDate validator: { dueDate, obj, errors ->
             if (!obj.id && dueDate.clone().clearTime() < new Date().clearTime()) errors.rejectValue("dueDate", "invalid")
         }
+
+        
+      
+    }
+
+    static mapping = {
+        deleted column:"delFlag"
     }
 }

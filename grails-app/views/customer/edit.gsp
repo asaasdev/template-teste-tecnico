@@ -29,6 +29,10 @@
                 <label for="mobilePhone"><strong>Celular</strong></label>
                 <input type="text" name="mobilePhone" class="form-control" value="${customer.mobilePhone}" id="mobilePhone">
             </div>
+            <div class="form-group">
+                    <label for="cpfCnpj"><strong>CPF/CNPJ</strong></label>
+                    <input type="text" name="cpfCnpj" class="form-control" value="${customer.cpfCnpj}" id="cpfCnpj">
+                </div>
 
             <button type="submit" class="btn btn-primary">Atualizar</button>
         </form>

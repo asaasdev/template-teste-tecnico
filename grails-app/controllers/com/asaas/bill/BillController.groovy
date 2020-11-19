@@ -27,8 +27,8 @@ class BillController extends BaseController {
     }
 
     def save() {
-        try {
-            Bill bill = billService.save(params.customerId.toLong(), Utils.toBigDecimal(params.value), Utils.toDate(params.dueDate))
+        try {        
+            Bill bill = billService.save(params.customerId.toLong(), Utils.toBigDecimal(params.value), Utils.toDate(params.dueDate), params.formOfPayment, Utils.toDate(params.paymentDate))
             if (!bill.hasErrors()) {
                 buildResponse(true, "Cobrança criada com sucesso!", bill)
                 redirect(action: "index")
@@ -50,7 +50,7 @@ class BillController extends BaseController {
 
     def update() {
         try {
-            Bill bill = billService.update(Bill.get(params.id), Utils.toBigDecimal(params.value), Utils.toDate(params.dueDate))
+            Bill bill = billService.update(Bill.get(params.id), Utils.toBigDecimal(params.value), Utils.toDate(params.dueDate), params.formOfPayment, Utils.toDate(params.paymentDate))
             if (!bill.hasErrors()) {
                 buildResponse(true, "Cobrança atualizada com sucesso!", bill)
                 redirect(action: "index")
@@ -67,7 +67,7 @@ class BillController extends BaseController {
     }
 
     def delete() {
-        try {
+        try {           
             Bill bill = billService.delete(Bill.get(params.id))
             if (!bill.hasErrors()) {
                 buildResponse(true, "Cobrança removida com sucesso.", bill)

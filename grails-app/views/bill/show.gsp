@@ -61,6 +61,22 @@
                         </div>
                     </li>
                     <li class="fieldcontain">
+                        <span class="property-label">
+                            Formas de Pagamentos:
+                        </span>
+                        <div class="property-value">
+                            ${bill.formOfPayment}
+                        </div>
+                    </li>
+                    <li class="fieldcontain">
+                        <span class="property-label">
+                            Data de Pagamento:
+                        </span>
+                        <div class="property-value">
+                            <g:formatDate date="${bill.paymentDate}" format="dd/MM/yyyy" />
+                        </div>
+                    </li>
+                    <li class="fieldcontain">
                         <a class="btn btn-info" href="<g:createLink controller='bill' action='edit' id='${bill.id}'/>">Editar</a>
                         <a class="btn btn-danger" href="<g:createLink controller='bill' action='delete' id='${bill.id}'/>">Remover</a>
                     </li>

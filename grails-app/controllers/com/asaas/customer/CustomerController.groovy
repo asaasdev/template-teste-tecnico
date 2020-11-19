@@ -23,8 +23,8 @@ class CustomerController extends BaseController {
     }
 
     def save() {
-        try {
-            Customer customer = customerService.save(params.name, params.email, params.mobilePhone)
+        try {           
+            Customer customer = customerService.save(params.name, params.email, params.mobilePhone, params.cpfCnpj)
             if (!customer.hasErrors()) {
                 buildResponse(true, "Cliente cadastrado com sucesso!", customer)
                 redirect(action: "index")
@@ -45,7 +45,7 @@ class CustomerController extends BaseController {
 
     def update() {
         try {
-            Customer customer = customerService.update(Customer.get(params.id), params.name, params.email, params.mobilePhone)
+            Customer customer = customerService.update(Customer.get(params.id), params.name, params.email, params.mobilePhone, params.cpfCnpj)
             if (!customer.hasErrors()) {
                 buildResponse(true, "Os dados de seu cliente foram atualizados com sucesso!", customer)
                 redirect(action: "index")

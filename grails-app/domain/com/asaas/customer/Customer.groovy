@@ -11,13 +11,23 @@ class Customer extends BaseEntity {
 
     String mobilePhone
 
+    String cpfCnpj
+
     static constraints = {
         mobilePhone nullable: true
         name blank: false
         email blank: false
+        cpfCnpj blank: false
+
 
         email validator: { email, obj, errors ->
             if (!Utils.isValidEmail(email)) errors.rejectValue("email", "invalid")
         }
+       
+    }
+    static mapping = {
+        // the deleted property may be configured
+        // like any other persistent property...
+        deleted column:"delFlag"
     }
 }

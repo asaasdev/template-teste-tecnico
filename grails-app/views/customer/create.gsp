@@ -28,6 +28,10 @@
                     <label for="mobilePhone"><strong>Celular</strong></label>
                     <input type="text" name="mobilePhone" class="form-control" value="${params.mobilePhone}" id="mobilePhone">
                 </div>
+                <div class="form-group">
+                    <label for="cpfCnpj"><strong>CPF/CNPJ</strong></label>
+                    <input type="text" name="cpfCnpj" class="form-control" value="${params.cpfCnpj}" id="cpfCnpj" required="required">
+                </div>
 
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>

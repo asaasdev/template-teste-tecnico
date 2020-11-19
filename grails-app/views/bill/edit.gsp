@@ -42,6 +42,22 @@
                     <label for="value">Vencimento em</label><br>
                     <input name="dueDate" type="date" value="${Utils.fromDate(bill.dueDate)}" required="required" class="form-control">
                 </div>
+              
+                 <div class="form-group">
+                    <label for="formOfPayment">Forma de Pagamento</label><br>
+                     
+                        <select id="formOfPayment" name="formOfPayment" required="required" class="form-control">
+                            <option></option>
+                            <option value="Boleto Bancário">Boleto Bancário</option> 
+                            <option value="Cartão de Crédito" >Cartão de Crédito</option>
+                            <option value="Transferência Bancária">Transferência Bancária</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="value">Data de Pagamento</label><br>
+                    <input name="paymentDate" type="date" value="${Utils.fromDate(bill.paymentDate)}" class="form-control">
+                </div>
                 <button type="submit" class="btn btn-primary">Atualizar</button>
             </form>
         </div>

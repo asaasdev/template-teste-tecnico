@@ -26,6 +26,8 @@
                 <th>Valor</th>
                 <th>Vencimento</th>
                 <th>Situação</th>
+                <th>Formas de Pagamentos</th>
+                <th>Data de Pagamento</th>
             </tr>
             </thead>
             <tbody>
@@ -35,6 +37,8 @@
                     <td>R$ <g:formatNumber number="${bill.value}" type="number" maxFractionDigits="2" minFractionDigits="2"/></td>
                     <td><g:formatDate date="${bill.dueDate}" format="dd/MM/yyyy" /></td>
                     <td><g:message code="BillStatus.${bill.status}"/></td>
+                    <td>${bill.formOfPayment}</td>
+                     <td><g:formatDate date="${bill.paymentDate}" format="dd/MM/yyyy" /></td>
                 </tr>
             </g:each>
             </tbody>

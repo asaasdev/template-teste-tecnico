@@ -42,6 +42,14 @@
                             ${customer.mobilePhone}
                         </div>
                     </li>
+                     <li class="fieldcontain">
+                        <span class="property-label">
+                            CPF/CNPJ:
+                        </span>
+                        <div class="property-value">
+                            ${customer.cpfCnpj}
+                        </div>
+                    </li>
                     <li class="fieldcontain">
                         <a class="btn btn-info" href="<g:createLink controller='customer' action='edit' id='${customer.id}'/>">Editar</a>
                         <a class="btn btn-danger" href="<g:createLink controller='customer' action='delete' id='${customer.id}'/>">Remover</a>
