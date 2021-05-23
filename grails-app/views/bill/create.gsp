@@ -28,6 +28,15 @@
                     <label for="dueDate">Vencimento em</label><br>
                     <input id="dueDate" value="${params.dueDate}" name="dueDate" type="date" required="required" class="form-control">
                 </div>
+                <div class="form-group">
+                    <label for="typeBilling">Forma de pagamento</label><br>
+                    <select id="typeBilling" class="form-control" name="typeBilling" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="Boleto Bancário">Boleto Bancário</option>
+                            <option value="Cartão de Crédito">Cartão de Crédito</option>
+                            <option value="Transferência Bancária">Transferência Bancária</option>
+                    </select>
+                </div>
                 <button type="submit" class="btn btn-primary">Criar cobrança</button>
             </form>
         </div>

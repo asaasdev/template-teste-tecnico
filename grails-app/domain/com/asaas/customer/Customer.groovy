@@ -11,13 +11,19 @@ class Customer extends BaseEntity {
 
     String mobilePhone
 
+    String cpfCnpj
+
     static constraints = {
         mobilePhone nullable: true
         name blank: false
         email blank: false
+        cpfCnpj blank: false
 
         email validator: { email, obj, errors ->
             if (!Utils.isValidEmail(email)) errors.rejectValue("email", "invalid")
+        }
+        cpfCnpj validator: { cpfCnpj, obj, errors ->
+            if (!Utils.isValidCpfCnpj(cpfCnpj)) errors.rejectValue("cpfCnpj", "invalid")
         }
     }
 }

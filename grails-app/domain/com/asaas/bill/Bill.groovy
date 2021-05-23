@@ -12,9 +12,15 @@ class Bill extends BaseEntity {
 
     Date dueDate
 
+    String typeBilling
+
     BillStatus status = BillStatus.PENDING
 
+
+
     static constraints = {
+        typeBilling blank: false
+
         value validator: { value, obj, errors ->
             if (value <= 0) errors.rejectValue("value", "min.exceeded")
         }
