@@ -10,7 +10,7 @@ import grails.gorm.transactions.Transactional
 @GrailsCompileStatic
 class CustomerService {
 
-    public Customer save(String name, String email, String mobilePhone) {
+    public Customer save(String name, String email, String mobilePhone, String cpfCnpj) {
         Customer validatedCustomer = validateEmail(email)
         if (validatedCustomer.hasErrors()) return validatedCustomer
 
@@ -18,6 +18,7 @@ class CustomerService {
         customer.name = name
         customer.email = email
         customer.mobilePhone = mobilePhone
+        customer.cpfCnpj = cpfCnpj
         customer.save()
 
         return customer
@@ -34,10 +35,11 @@ class CustomerService {
         return validateCustomer
     }
 
-    public Customer update(Customer customer, String name, String email, String mobilePhone) {
+    public Customer update(Customer customer, String name, String email, String mobilePhone, String cpfCnpj) {
         customer.name = name
         customer.email = email
         customer.mobilePhone = mobilePhone
+        customer.cpfCnpj = cpfCnpj
         customer.save()
         return customer
     }

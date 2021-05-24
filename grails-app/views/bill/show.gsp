@@ -61,6 +61,14 @@
                         </div>
                     </li>
                     <li class="fieldcontain">
+                        <span class="property-label">
+                            Forma de pagamento:
+                        </span>
+                        <div class="property-value">
+                            <g:message code="${bill.typeBilling}" />
+                        </div>
+                    </li>
+                    <li class="fieldcontain">
                         <a class="btn btn-info" href="<g:createLink controller='bill' action='edit' id='${bill.id}'/>">Editar</a>
                         <a class="btn btn-danger" href="<g:createLink controller='bill' action='delete' id='${bill.id}'/>">Remover</a>
                     </li>

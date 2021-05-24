@@ -4,6 +4,7 @@ import com.asaas.base.BaseEntity
 import com.asaas.customer.Customer
 import com.asaas.enums.bill.BillStatus
 
+
 class Bill extends BaseEntity {
 
     Customer customer
@@ -12,9 +13,16 @@ class Bill extends BaseEntity {
 
     Date dueDate
 
+    String typeBilling
+
     BillStatus status = BillStatus.PENDING
 
+    Date paymentDate
+
     static constraints = {
+        typeBilling blank: false
+        paymentDate nullable: true, blank: false
+
         value validator: { value, obj, errors ->
             if (value <= 0) errors.rejectValue("value", "min.exceeded")
         }
@@ -22,5 +30,8 @@ class Bill extends BaseEntity {
         dueDate validator: { dueDate, obj, errors ->
             if (!obj.id && dueDate.clone().clearTime() < new Date().clearTime()) errors.rejectValue("dueDate", "invalid")
         }
+    }
+    static mapping = {
+        deleted column:"delFlag"
     }
 }

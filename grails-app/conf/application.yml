@@ -120,16 +120,17 @@ environments:
                 url: "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
 
             # UTILIZE ESTE BLOCO CASO QUEIRA CONECTAR A APLICAÇÃO AO MYSQL.
-            # dataSource:
-            #     dbCreate: "update"
-            #     url: "jdbc:mysql://localhost/asaastest?useSSL=false&allowPublicKeyRetrieval=true"
-            #     driverClassName: "com.mysql.jdbc.Driver"
-            #     username: "defina_seu_usuario"
-            #     password: "defina_sua_senha"
-            #     type: "com.zaxxer.hikari.HikariDataSource"
-            #     properties:
-            #         connectionTimeout: 30000
-            #         idleTimeout: 600000
-            #         maxLifetime: 1800000
-            #         connectionTestQuery: "SELECT 1"
-            #         maximumPoolSize: 5
+             #dataSource:
+             #    dbCreate: "update"
+             #    url: "jdbc:mysql://localhost/asaastest?useSSL=false&allowPublicKeyRetrieval=true"
+             #    driverClassName: "com.mysql.jdbc.Driver"
+             #    username: "root"
+             #    password: "senha"
+             #    type: "com.zaxxer.hikari.HikariDataSource"
+             #    properties:
+             #        connectionTimeout: 30000
+             #         idleTimeout: 600000
+             #        maxLifetime: 1800000
+             #        connectionTestQuery: "SELECT 1"
+             #        maximumPoolSize: 5
+
