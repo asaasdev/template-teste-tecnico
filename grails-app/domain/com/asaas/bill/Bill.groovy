@@ -4,6 +4,7 @@ import com.asaas.base.BaseEntity
 import com.asaas.customer.Customer
 import com.asaas.enums.bill.BillStatus
 
+
 class Bill extends BaseEntity {
 
     Customer customer
@@ -31,8 +32,6 @@ class Bill extends BaseEntity {
         }
     }
     static mapping = {
-        // the deleted property may be configured
-        // like any other persistent property...
         deleted column:"delFlag"
     }
 }

@@ -28,8 +28,6 @@ class Customer extends BaseEntity {
         }
     }
     static mapping = {
-        // the deleted property may be configured
-        // like any other persistent property...
         deleted column:"delFlag"
     }
 }
