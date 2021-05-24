@@ -51,6 +51,10 @@
                         <option value="Transferência Bancária" ${bill.typeBilling == 'Transferência Bancária' ? 'selected' : ''}>Transferência Bancária</option>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label for="paymentDate">Pagamento em </label><br>
+                    <input id="paymentDate" value="${params.paymentDate}" name="paymentDate" type="date" class="form-control">
+                </div>
                 <button type="submit" class="btn btn-primary">Atualizar</button>
             </form>
         </div>

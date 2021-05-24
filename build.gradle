@@ -33,6 +33,7 @@ configurations {
 }
 
 dependencies {
+    compile "org.grails.plugins:gorm-logical-delete:2.0.0.M1"
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-autoconfigure"
@@ -76,6 +77,7 @@ dependencies {
     compile group: "com.zaxxer", name: "HikariCP", version: "3.4.5"
     runtime 'org.codehaus.groovy:groovy-dateutil'
     runtime "mysql:mysql-connector-java:5.1.49"
+
 }
 
 bootRun {

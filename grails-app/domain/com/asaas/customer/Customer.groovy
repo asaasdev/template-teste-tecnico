@@ -3,6 +3,7 @@ package com.asaas.customer
 import com.asaas.base.BaseEntity
 import com.asaas.utils.Utils
 
+
 class Customer extends BaseEntity {
 
     String email
@@ -25,5 +26,10 @@ class Customer extends BaseEntity {
         cpfCnpj validator: { cpfCnpj, obj, errors ->
             if (!Utils.isValidCpfCnpj(cpfCnpj)) errors.rejectValue("cpfCnpj", "invalid")
         }
+    }
+    static mapping = {
+        // the deleted property may be configured
+        // like any other persistent property...
+        deleted column:"delFlag"
     }
 }
