@@ -71,7 +71,7 @@ dependencies {
     testCompile "org.seleniumhq.selenium:selenium-api:3.14.0"
     testCompile "org.seleniumhq.selenium:selenium-support:3.14.0"
     testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:3.14.0"
-    testRuntime "org.seleniumhq.selenium:selenium-firefox-driver:3.14.0"
+    testRuntime "org.seleniumhq.selenium:selenium-firefox-driver:4.1.2"
 
     compile group: "com.zaxxer", name: "HikariCP", version: "3.4.5"
     runtime 'org.codehaus.groovy:groovy-dateutil'
