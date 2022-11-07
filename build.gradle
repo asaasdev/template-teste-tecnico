@@ -6,7 +6,7 @@ buildscript {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath "gradle.plugin.com.github.erdi.webdriver-binaries:webdriver-binaries-gradle-plugin:2.0"
         classpath "org.grails.plugins:hibernate5:7.0.4"
-        classpath "com.bertramlabs.plugins:asset-pipeline-gradle:3.2.4"
+        classpath "com.bertramlabs.plugins:asset-pipeline-gradle:4.0.0"
     }
 }
 
