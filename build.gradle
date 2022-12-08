@@ -70,7 +70,7 @@ dependencies {
     testCompile "org.seleniumhq.selenium:selenium-remote-driver:3.14.0"
     testCompile "org.seleniumhq.selenium:selenium-api:3.14.0"
     testCompile "org.seleniumhq.selenium:selenium-support:3.14.0"
-    testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:3.14.0"
+    testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:4.7.1"
     testRuntime "org.seleniumhq.selenium:selenium-firefox-driver:3.14.0"
 
     compile group: "com.zaxxer", name: "HikariCP", version: "3.4.5"
