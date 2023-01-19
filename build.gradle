@@ -75,7 +75,7 @@ dependencies {
 
     compile group: "com.zaxxer", name: "HikariCP", version: "3.4.5"
     runtime 'org.codehaus.groovy:groovy-dateutil'
-    runtime "mysql:mysql-connector-java:5.1.49"
+    runtime "mysql:mysql-connector-java:8.0.32"
 }
 
 bootRun {
